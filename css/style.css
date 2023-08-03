@@ -3,6 +3,9 @@
     -moz-box-sizing: border-box;
      box-sizing: border-box;
 }
+:root{
+    --mainColor: #10cab7;
+}
 body{
     font-family: 'Work Sans', sans-serif;;
 }
@@ -45,6 +48,7 @@ header .nav{
     position: relative;
     /* border: 2px solid red;
     background-color: antiquewhite; */
+    /* transition: 3s; */
 }
 header .nav:hover .icons span:nth-child(2){
 width: 100%;
@@ -79,11 +83,60 @@ header .nav ul{
     right: 0;
     min-width: 200px;
     top: calc(100% + 15px);
-    /* display: none; */
+    display: none;
+    transition: 3s;
+    z-index: 1;
 }
+header .nav:hover ul{
+    display: block;
+    }
 header .nav ul::before{
-content: "";
-}
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: transparent transparent blue transparent;
+    border-width: 10px;
+    right: 5px;
+    top: -20px;}
 header .nav ul li a{
-text-decoration: none;
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: #333;
+    transition: 0.4s;
 }
+header .nav ul li a:hover{
+    padding-left: 25px;
+}
+header .nav ul li:not(:last-child){
+border-bottom: 1px solid #444141;
+}
+/* Start landing */
+.landing{
+    background-image: url(../images/landingpicone.jpg);
+    background-size: cover;
+    height:calc(100dvh - 54px);
+    position: relative;
+}
+.landing .text-landing{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+.landing .text-landing h1{
+    color: var(--mainColor);
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+}
+.landing .text-landing p{
+    color: #2c4755;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* End landing */
