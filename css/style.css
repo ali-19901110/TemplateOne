@@ -5,6 +5,8 @@
 }
 :root{
     --mainColor: #10cab7;
+    --secoundColor: #1f2021;
+    --main-padding:50px;
 }
 body{
     font-family: 'Work Sans', sans-serif;;
@@ -15,23 +17,25 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+/* Start Media */
 @media (min-width: 768px){
 .container{
-    width: 750px;
+    width: 700px;
 }
 }
 /* Medium */
 @media (min-width: 992px){
 .container{
-    width: 970px;
+    width: 920px;
 }
 }
 /* Large */
 @media (min-width: 1200px){
 .container{
-    width: 1170px;
+    width: 1100px;
 }
 }
+/* End Media */
 /* Start header */
 header{
     padding: 15px;
@@ -140,3 +144,118 @@ border-bottom: 1px solid #444141;
 }
 
 /* End landing */
+/* Start features */
+.features{
+    padding-top: var(--main-padding);
+    
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 20px;
+}
+.features .container .feat{
+padding: 20px;
+text-align: center;
+}
+.features .container .feat i{
+color: var(--mainColor);
+width: 20px;
+}
+.features .container .feat h3{
+    font-weight: 800;
+    margin: 25px 0;
+    }
+.features .container .feat p{
+    color: #777;
+    line-height: 1.7;
+    font-size: 16px;
+}
+/* End features */
+/* Start services */
+.sercives{
+    padding-bottom: var(--main-padding);
+}
+.sercives .container{
+   /* text-align: center;  */
+}
+ .title-services {
+   padding-bottom: 20px;
+   position: relative;
+  text-align: center;
+}
+.title-services h4{
+   
+    font-size: 50px;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    color: #ebeced
+}
+ .title-services p:nth-child(2){
+    font-size: 11px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+}
+.sercives .cards{
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 10px;
+    margin-top: 70px;
+}
+.container .cards .col {
+
+}
+.container .cards .service{
+    display: flex;
+    margin-bottom: 30px;
+}
+@media (max-width: 550px){
+    .container .cards .service{
+        flex-direction: column;
+       text-align: center;
+    }
+}
+.service  i{
+   color: var(--mainColor);
+   flex-basis: 50px;
+}
+ .col .service .title-card{
+   flex: 1;
+}
+ .title-card h5{
+    margin: 0 0 20px;
+}
+.title-card p{
+    color: #777;
+    font-weight: 300;
+    line-height: 1.7;
+}
+.cards .col .image{
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+ .col .image::before{
+     content: "";
+    background-color: rgb(183, 201, 183);
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 100px);
+    right: 0;
+    top: -50px;
+    z-index: -1;
+}
+ .col .image img{
+   width: 260px;
+   height: 100%;
+}
+@media (max-width: 1190px){
+    .image-hidd{
+        display: none;
+    }
+}
+
+/* End cervices */
