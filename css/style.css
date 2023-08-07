@@ -8,6 +8,9 @@
     --secoundColor: #1f2021;
     --main-padding:50px;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Work Sans', sans-serif;;
 }
@@ -154,6 +157,7 @@ border-bottom: 1px solid #444141;
     grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
     gap: 20px;
 }
+
 .features .container .feat{
 padding: 20px;
 text-align: center;
@@ -174,25 +178,42 @@ width: 20px;
 /* End features */
 /* Start services */
 .sercives{
+    
     padding-bottom: var(--main-padding);
 }
 .sercives .container{
-   /* text-align: center;  */
+   text-align: center; 
+ }
+/*@media(min-width: 750px){
+    .sercives .container{
+        width: 650px;
+    }
 }
- .title-services {
+@media(min-width: 950px){
+    .sercives .container{
+        width: 850px;
+    }
+}
+@media(min-width: 1050px){
+    .sercives .container{
+        width: 950px;
+    }
+} */
+ .title-catagories {
+    
    padding-bottom: 20px;
    position: relative;
   text-align: center;
 }
-.title-services h4{
+.title-catagories h4{
    
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 800;
     padding: 0;
     margin: 0;
-    color: #ebeced
+    color: #f6f6f6
 }
- .title-services p:nth-child(2){
+ .title-catagories p:nth-child(2){
     font-size: 11px;
     position: absolute;
     left: 50%;
@@ -257,5 +278,172 @@ width: 20px;
         display: none;
     }
 }
-
 /* End cervices */
+
+/* Start Portfoli */
+.portfoli{
+    padding-top: var(--main-padding);
+    background-color: #fafafa;
+}
+.portfoli .container{
+    text-align: center;
+}
+.portfoli .container .carts-portfoli{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.carts-portfoli-cart{
+    background-color: #ffffff;
+}
+.carts-portfoli img{
+    width: 100%;
+    height: 250px;
+    
+}
+.carts-portfoli-cart-text{
+    text-align: left;
+    padding: 20px;
+}
+.carts-portfoli-cart-text h4{
+    margin: 0;
+    /* font-size: 10px; */
+}
+.carts-portfoli-cart-text p{
+color: #1f2021;
+margin-bottom: 0;
+line-height: 1.6;
+}
+/* End Portfoli */
+/* Start About */
+.about{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-paddings);
+}
+
+.about .container .section-about{
+    margin-top: 100px;
+   display: flex;
+    flex-wrap: wrap;
+     flex-direction: row;
+    justify-content: space-between;
+}
+@media (max-width: 991px){
+    .about .container .section-about{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.container .section-about .image-sec {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+@media (max-width: 991px){
+    .container .section-about .image-sec {
+        margin: 0 auto 20px;
+    } 
+}
+.container .section-about .image-sec img{
+    max-width: 100%;
+}
+
+.container .section-about .image-sec::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: calc(100% + 80px);
+    background-color: #fafafa;
+    top: -40px;
+    left: -15px;
+    z-index: -2;
+}
+.container .section-about .image-sec::after{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 240px;
+    border-left: 60px solid var(--mainColor);
+    border-bottom: 60px solid var(--mainColor) ;
+    z-index: -1;
+    right: -85px;
+    top: -35px;
+}
+@media (max-width: 991px){
+    .container .section-about .image-sec::before ,
+    .container .section-about .image-sec::after
+    {
+        display: none;
+    }
+   
+}
+.container .section-about .image-sec img{
+    width: 100%;
+}
+.container .section-about  .text{
+flex-basis: calc(100% - 400px);
+
+}
+.container .section-about  .text p:first-of-type{
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+.container .section-about  .text hr{
+    width: 50%;
+    display: inline-block;
+    border-color: var(--mainColor);
+}
+.container .section-about  .text p:last-of-type{
+   line-height: 2;
+   color: #777;
+}
+/* End About */
+/* Start contact */
+.contact{
+    padding-top: var(--main-padding);
+    background-color: #fafafa;
+}
+.contact .info{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    text-align: center;
+}
+.contact .info .p-contact{
+    font-size: 30px;
+    font-weight: 800;
+    color: #1f2021;
+}
+.contact .info a{
+    display: block;
+    color: var(--mainColor);
+    text-decoration: none;
+    font-size: 30px;
+    /* background-color: #ffffff; */
+    font-weight: 800;
+}
+.contact .info .social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.contact .info .social i{
+    margin-left: 10px;
+    color: #334752;
+    
+}
+/* End contact */
+/* Start footer */
+.footer{
+    text-align: center;
+    background-color: #2c4755;
+    padding: 10px;
+
+}
+.footer span{
+    font-weight: bold;
+color: var(--mainColor);
+}
+/* End footer */
